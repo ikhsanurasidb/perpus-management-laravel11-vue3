@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomePage from "../components/HomePage.vue";
-import AboutPage from "../components/AboutPage.vue";
+import MenuView from "../components/MenuView.vue";
+import LoginView from "@/components/LoginView.vue";
+import PegawaiView from "../components/PegawaiView.vue";
+import BarangView from "../components/BarangView.vue";
 import NotFoundPage from "../components/NotFoundPage.vue";
 
 const router = createRouter({
@@ -8,19 +10,29 @@ const router = createRouter({
     routes: [
         {
             path: "/",
-            name: "home",
-            component: HomePage,
+            name: "login",
+            component: LoginView,
         },
         {
-            path: "/about",
-            name: "about",
-            component: AboutPage,
+            path: "/menu",
+            name: "menu",
+            component: MenuView,
         },
         {
-            path: '/:pathMatch(.*)*',
-            name: 'not-found',
+            path: "/pegawai",
+            name: "pegawai",
+            component: PegawaiView,
+        },
+        {
+            path: "/barang",
+            name: "barang",
+            component: BarangView,
+        },
+        {
+            path: "/:pathMatch(.*)*",
+            name: "not-found",
             component: NotFoundPage,
-        }
+        },
     ],
 });
 
