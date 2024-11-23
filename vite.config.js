@@ -6,10 +6,7 @@ export default defineConfig({
     server: {
         https: true,
     },
-    base:
-        process.env.NODE_ENV === "production"
-            ? "/build/"
-            : "/",
+    base: process.env.NODE_ENV === "production" ? "/build/" : "/",
     resolve: {
         alias: {
             "@": "/resources/js",
@@ -22,4 +19,13 @@ export default defineConfig({
         }),
         vue(),
     ],
+    build: {
+        // Ensure proper MIME types are set
+        manifest: true,
+        rollupOptions: {
+            output: {
+                manualChunks: undefined,
+            },
+        },
+    },
 });

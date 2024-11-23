@@ -12,9 +12,7 @@
 
         <!-- Styles / Scripts -->
         {{-- @vite('resources/css/app.css') --}}
-        <link rel="stylesheet" href="https://perpus-management-laravel11-vue3-ikhsanurasids-projects.vercel.app/build/assets/app-Cj3Pe46D.css" />
-        <script type="module" src="https://perpus-management-laravel11-vue3-ikhsanurasids-projects.vercel.app/build/assets/app-B99DFDfs.js"></script>
-    </head>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     <body>
         <main id="app"></main>
         {{-- @vite('resources/js/app.js') --}}
