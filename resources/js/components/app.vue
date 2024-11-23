@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import FooterView from "./FooterView.vue";
 import MenuView from "./MenuView.vue";
 import { useRoute } from "vue-router";
