@@ -20,10 +20,10 @@
     "buildCommand": "vite build",
     "outputDirectory": "public",
     "env": {
-        "APP_ENV": "production",
+        "APP_ENV": "local",
         "APP_DEBUG": "false",
-        "APP_URL": "https://yourproductionurl.com",
-        "APP_KEY": "base64:TGaVaXwhWgjn9akhE4SCSIjGG/cQqvICUQ+PgLA3Bs0=",
+        "APP_KEY": "base64:K/V3zd6+gLXaDs4/Cys9DaQiPXUu9MqsgtAhVIo+gt0=",
+        "APP_URL": "https://yourdomain",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
@@ -31,12 +31,14 @@
         "APP_SERVICES_CACHE": "/tmp/services.php",
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie",
-        "DB_CONNECTION": "mysql",
-        "DB_HOST": "4gg.h.filess.io",
-        "DB_PORT": "3306",
-        "DB_DATABASE": "db2024_stormtorn",
-        "DB_USERNAME": "db2024_stormtorn"
+        "LOG_CHANNEL": "stack",
+        "SESSION_DRIVER": "database",
+        "DB_CONNECTION": "mariadb",
+        "DB_HOST": "hf1zb.h.filess.io",
+        "DB_PORT": "3305",
+        "DB_DATABASE": "DBinibcdefgh_pasthourby",
+        "DB_USERNAME": "DBinibcdefgh_pasthourby",
+        "DB_PASSWORD": "1cea17a6cf907b7f49d68583721d5d08c97084f0",
+        "DB_COLLATION": "utf8mb4_unicode_ci"
     }
 }
