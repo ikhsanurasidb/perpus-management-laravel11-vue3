@@ -10,11 +10,10 @@ Route::get('/test', function (Request $request) {
 });
 
 Route::post('/register', [RegisterController::class, 'register']);
-Route::post('/login', [RegisterController::class, 'login']); // Tambahkan rute login
+Route::post('/login', [RegisterController::class, 'login']);
 
-// Pindahkan rute store keluar dari grup middleware auth:sanctum
 Route::post('/book/store', [BukuController::class, 'store']);
-Route::get('/book/show/{id}', [BukuController::class, 'show']); // Pastikan rute ini ada
+Route::get('/book/show/{id}', [BukuController::class, 'show']);
 
 Route::middleware('auth:sanctum')->group(function() {
     Route::get('/bukus', [BukuController::class, 'index']);

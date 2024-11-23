@@ -7,6 +7,7 @@ const store = useUserStore();
 function increase() {
     store.thecounter++;
 }
+
 </script>
 
 <template>

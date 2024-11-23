@@ -11,13 +11,19 @@ const theroute = useRoute();
 const isnotlogin = computed(() => {
     return theroute.name != "login" ? true : false;
 });
+
+const isnotmenu = computed(() => {
+    return theroute.name != "menu" ? true : false;
+});
+
 </script>
 <template>
-    <div>
-        <MenuView v-if="isnotlogin" />
-        <div class="w-full h-full">
+    <div class="flex flex-col min-h-[91vh]" :class="{'mt-20' : isnotlogin}">
+        <MenuView v-if="isnotlogin && isnotmenu" />
+
+        <div class="flex-1 px-4" :class="{'lg:ml-72' : isnotlogin}">
             <router-view></router-view>
         </div>
-        <FooterView v-if="isnotlogin" />
+        <FooterView class="mt-16 lg:ml-72" v-if="isnotlogin" />
     </div>
 </template>

@@ -74,7 +74,7 @@ const login = form.handleSubmit((formData) => {
 </script>
 
 <template>
-    <div class="flex items-center justify-center h-screen">
+    <div class="flex items-center justify-center w-full min-h-screen">
         <Card class="w-96">
             <CardHeader class="mb-6 text-3xl font-semibold text-center">
                 Library Management System
