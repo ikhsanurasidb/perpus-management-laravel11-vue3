@@ -6,16 +6,10 @@
             "runtime": "vercel-php@0.6.0"
         }
     },
-    "routes": [
-        {
-            "src": "/build/(.*)",
-            "dest": "/public/build/"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/public/index.php"
-        }
-    ],
+    "routes": [{
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+  }],
     "public": true,
     "buildCommand": "vite build",
     "outputDirectory": "public",
