@@ -23,7 +23,7 @@
         "APP_ENV": "local",
         "APP_DEBUG": "false",
         "APP_KEY": "base64:K/V3zd6+gLXaDs4/Cys9DaQiPXUu9MqsgtAhVIo+gt0=",
-        "APP_URL": "https://yourdomain",
+        "APP_URL": "perpus-management-laravel11-vue3-p7j0fi5ng.vercel.app",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
