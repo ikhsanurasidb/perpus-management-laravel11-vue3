@@ -11,10 +11,12 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
 
         <!-- Styles / Scripts -->
-        @vite('resources/css/app.css')
+        {{-- @vite('resources/css/app.css') --}}
+        <script type="module" src="@vite('resources/css/app.css')"></script>
+        <script type="module" src="@vite('resources/js/app.js')"></script>
     </head>
     <body>
         <main id="app"></main>
-        @vite('resources/js/app.js')
+        {{-- @vite('resources/js/app.js') --}}
     </body>
 </html>
