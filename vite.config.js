@@ -8,7 +8,7 @@ export default defineConfig({
     },
     base:
         process.env.NODE_ENV === "production"
-            ? "https://perpus-management-laravel11-vue3-ikhsanurasids-projects.vercel.app/"
+            ? "/build/"
             : "/",
     resolve: {
         alias: {
