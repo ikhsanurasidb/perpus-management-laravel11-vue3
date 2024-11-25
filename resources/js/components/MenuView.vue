@@ -67,6 +67,7 @@ function logout() {
             console.log(response.data);
             if (response.data.success === true) {
                 store.reset();
+                console.log("Log out: " + store.token);
                 therouter.push("/");
             }
         })

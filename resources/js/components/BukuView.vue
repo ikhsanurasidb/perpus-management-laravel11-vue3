@@ -64,7 +64,7 @@ function hapus() {
 
     axios({
         url: `http://localhost:8000/api/book/delete/${bookToDelete.value}`,
-        method: "get", // Change to appropriate method if needed
+        method: "get",
         headers: customConfig,
     })
         .then((response) => {

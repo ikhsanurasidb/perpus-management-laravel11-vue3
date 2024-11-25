@@ -4,9 +4,12 @@ import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
     server: {
-        https: true,
+        https: false,
     },
-    base: process.env.NODE_ENV === "production" ? "/build/" : "/",
+    base:
+        process.env.NODE_ENV === "production"
+            ? "/build/"
+            : "/",
     resolve: {
         alias: {
             "@": "/resources/js",

@@ -61,7 +61,7 @@ const login = form.handleSubmit((formData) => {
                 store.email = username.value;
                 store.token = auth.value.data;
                 store.thecounter++;
-                console.log(store.token);
+                console.log("Login: " + store.token);
                 therouter.push("/menu");
             }
         })

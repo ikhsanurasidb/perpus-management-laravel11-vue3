@@ -56,12 +56,19 @@ const formSchema = toTypedSchema(
         judul: z.string().min(1, "Title is required"),
         pengarang: z.string().min(1, "Author is required"),
         tahun: z
-            .number()
-            .min(1000, "Year must be at least 1000")
-            .max(
-                new Date().getFullYear(),
-                `Year must not exceed ${new Date().getFullYear()}`
-            ),
+            .union([z.string(), z.number()])
+            .transform((val) =>
+                typeof val === "string" ? parseInt(val, 10) : val
+            )
+            .refine((val) => !isNaN(val), {
+                message: "Year must be a valid number",
+            })
+            .refine((val) => val >= 1000, {
+                message: "Year must be at least 1000",
+            })
+            .refine((val) => val <= new Date().getFullYear(), {
+                message: `Year must not exceed ${new Date().getFullYear()}`,
+            }),
     })
 );
 
@@ -141,7 +148,7 @@ onMounted(async () => {
                 <FormLabel>ISBN</FormLabel>
                 <FormControl>
                     <Input
-                        v-if="theroute.params.theisbn === undefined || -1"
+                        v-if="theroute.params.theisbn === undefined"
                         v-bind="field"
                         v-model="form.values.isbn"
                     />
@@ -149,6 +156,7 @@ onMounted(async () => {
                         v-else
                         v-bind="field"
                         v-model="form.values.isbn"
+                        class="text-gray-500 bg-slate-400"
                         :readonly="isbn_readonly"
                     />
                 </FormControl>
