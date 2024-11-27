@@ -1,7 +1,5 @@
 # Login Form and Authentication
 
-Untuk database connection sudah terdapat pada .env 🙏
-
 Email: hello@gmail.com
 Password: hello
 
