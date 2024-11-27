@@ -1,12 +1,15 @@
 # Login Form and Authentication
 
-Untuk database connection sudah terdapat pada .env 🙏
-
 Email: hello@gmail.com
 Password: hello
 
 ## Log-in and Log-out
 ![login-logout](https://github.com/user-attachments/assets/5f4ef8bc-fc6c-49cf-82d3-ea0f0f56ff58)
+
+## Register
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/f15ec694-73db-452d-b780-e32552a9a142">
+
+
 
 # CRUD Operation
 ## Read
