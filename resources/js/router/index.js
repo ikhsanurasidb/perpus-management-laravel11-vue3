@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MenuView from "../components/MenuView.vue";
+import MenuView from "@/components/MenuView.vue";
 import LoginView from "@/components/LoginView.vue";
-import PegawaiView from "../components/PegawaiView.vue";
-import BarangView from "../components/BarangView.vue";
+import RegisterView from "@/components/RegisterView.vue";
+import PegawaiView from "@/components/PegawaiView.vue";
+import BarangView from "@/components/BarangView.vue";
 import BukuView from "@/components/BukuView.vue";
 import FormBukuView from "@/components/FormBukuView.vue";
-import NotFoundPage from "../components/NotFoundPage.vue";
+import NotFoundPage from "@/components/NotFoundPage.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
             path: "/",
             name: "login",
             component: LoginView,
+        },
+        {
+            path: "/register",
+            name: "register",
+            component: RegisterView,
         },
         {
             path: "/menu",

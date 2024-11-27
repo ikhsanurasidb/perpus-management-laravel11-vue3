@@ -8,7 +8,12 @@ import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import {
+    Card,
+    CardHeader,
+    CardContent,
+    CardFooter,
+} from "@/components/ui/card";
 import {
     FormControl,
     FormField,
@@ -51,7 +56,6 @@ const login = form.handleSubmit((formData) => {
         url: "http://localhost:8000/api/login",
         method: "post",
         data: bodyParameters.value,
-        withCredentials: true,
         headers: customConfig,
     })
         .then((response) => {
@@ -119,6 +123,14 @@ const login = form.handleSubmit((formData) => {
                     </div>
                 </form>
             </CardContent>
+            <CardFooter class="flex justify-center">
+                <router-link
+                    to="/register"
+                    class="text-sm text-blue-600 hover:underline"
+                >
+                    Doesn't have an account? Register
+                </router-link>
+            </CardFooter>
         </Card>
     </div>
 </template>
