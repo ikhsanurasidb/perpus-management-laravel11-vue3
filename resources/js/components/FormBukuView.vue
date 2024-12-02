@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -42,17 +41,7 @@ const customConfig = {
 
 const formSchema = toTypedSchema(
     z.object({
-        isbn: z
-            .union([z.string(), z.number()])
-            .transform((val) =>
-                typeof val === "string" ? parseInt(val, 10) : val
-            )
-            .refine((val) => !isNaN(val), {
-                message: "ISBN must be a valid number",
-            })
-            .refine((val) => val > 0, {
-                message: "ISBN is required and must be greater than 0",
-            }),
+        isbn: z.string().min(1, "ISBN is required"),
         judul: z.string().min(1, "Title is required"),
         pengarang: z.string().min(1, "Author is required"),
         tahun: z
@@ -62,9 +51,6 @@ const formSchema = toTypedSchema(
             )
             .refine((val) => !isNaN(val), {
                 message: "Year must be a valid number",
-            })
-            .refine((val) => val >= 1000, {
-                message: "Year must be at least 1000",
             })
             .refine((val) => val <= new Date().getFullYear(), {
                 message: `Year must not exceed ${new Date().getFullYear()}`,

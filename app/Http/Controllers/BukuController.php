@@ -8,10 +8,11 @@ use App\Http\Requests\StoreBukuRequest;
 use App\Http\Requests\UpdateBukuRequest;
 use App\Http\Controllers\MyUtil;
 use Validator;
-use Illuminate\Support\Fadecades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\DB;
 
 class BukuController extends Controller
 {
@@ -121,6 +122,33 @@ class BukuController extends Controller
             return MyUtil::sendError("NOT FOUND", 'NOT FOUND');
         }
     }
+
+    public function search(Request $request)
+{
+    $cari = $request->cari;
+    $start = $request->start;
+    $limit = $request->limit;
+
+    $count = DB::table('bukus')
+        ->where('judul', 'like', "%" . $cari . "%")
+        ->orWhere('pengarang', 'like', "%" . $cari . "%")
+        ->count();
+
+    $buku = DB::table('bukus')
+        ->where('judul', 'like', "%" . $cari . "%")
+        ->orWhere('pengarang', 'like', "%" . $cari . "%")
+        ->offset($start)
+        ->limit($limit)
+        ->orderBy('judul')
+        ->get();
+
+    $obj = new \stdClass();
+    $obj->count = $count;
+    $obj->buku = $buku;
+
+    return MyUtil::sendResponse($obj, 'OK');
+}
+
 
     /**
      * Remove the specified resource from storage.

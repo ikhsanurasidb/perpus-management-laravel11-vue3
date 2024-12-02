@@ -10,6 +10,10 @@ class Buku extends Model
 
     public $timestamps = false;
 
+    protected $casts = [
+        'isbn' => 'string',
+    ];
+
     protected $fillable = [
         'isbn',
         'judul',

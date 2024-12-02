@@ -2,7 +2,7 @@
   "$schema": "https://shadcn-vue.com/schema.json",
   "style": "default",
   "typescript": false,
-  "tsConfigPath": "./jsconfig.json",
+  "jsConfigPath": "./jsconfig.json",
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "resources/css/app.css",
