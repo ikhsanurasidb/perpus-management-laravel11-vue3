@@ -1,52 +1,27 @@
 {
     "version": 2,
-    "framework": null,
+      "framework": null,
     "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.6.0"
-        }
+        "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
-    ],
-    "headers": [
-        {
-            "source": "/build/(.*)\\.js$",
-            "headers": [
-                {
-                    "key": "Content-Type",
-                    "value": "application/javascript"
-                }
-            ]
-        },
-        {
-            "source": "/build/(.*)\\.mjs$",
-            "headers": [
-                {
-                    "key": "Content-Type",
-                    "value": "application/javascript"
-                }
-            ]
-        }
-    ],
-    "public": true,
-    "buildCommand": "vite build",
-    "outputDirectory": "public",
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "/api/index.php"
+    }],
     "env": {
-        "APP_ENV": "local",
-        "APP_DEBUG": "false",
-        "APP_KEY": "base64:K/V3zd6+gLXaDs4/Cys9DaQiPXUu9MqsgtAhVIo+gt0=",
-        "APP_URL": "perpus-management-laravel11-vue3-p7j0fi5ng.vercel.app",
-        "SESSION_DRIVER": "database",
-        "DB_CONNECTION": "mariadb",
-        "DB_HOST": "hf1zb.h.filess.io",
-        "DB_PORT": "3305",
-        "DB_DATABASE": "DBinibcdefgh_pasthourby",
-        "DB_USERNAME": "DBinibcdefgh_pasthourby",
-        "DB_PASSWORD": "1cea17a6cf907b7f49d68583721d5d08c97084f0",
-        "DB_COLLATION": "utf8mb4_unicode_ci"
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://yourproductionurl.com",
+
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie"
     }
 }
