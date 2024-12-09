@@ -23,16 +23,15 @@ export default defineConfig({
         },
     },
     build: {
-        // Generate manifest.json in outDir
         manifest: true,
         rollupOptions: {
-            // Ensure to output asset files names with hash
             output: {
-                manualChunks: undefined,
-                entryFileNames: `assets/[name].[hash].js`,
-                chunkFileNames: `assets/[name].[hash].js`,
-                assetFileNames: `assets/[name].[hash].[ext]`
+                entryFileNames: "assets/[name].[hash].js",
+                chunkFileNames: "assets/[name].[hash].js",
+                assetFileNames: "assets/[name].[hash].[ext]",
             },
         },
+        outDir: "public/build",
+        emptyOutDir: true,
     },
 });
