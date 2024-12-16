@@ -46,7 +46,7 @@ const customConfig = {
 const cari = ref("");
 const showDeleteDialog = ref(false);
 const bookToDelete = ref(null);
-const APP_URL = import.meta.env.APP_URL;
+const APP_URL = import.meta.env.VITE_APP_URL;
 
 const nomor = computed(() => {
     return currentPage.value === 1 ? 1 : (currentPage.value - 1) * per_page + 1;

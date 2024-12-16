@@ -39,7 +39,9 @@ const auth = ref({ success: null, message: "" });
 const username = ref("");
 const password = ref("");
 const store = useUserStore();
-const APP_URL = import.meta.env.APP_URL;
+const APP_URL = import.meta.env.VITE_APP_URL;
+
+console.log(APP_URL);
 
 const customConfig = {
     "Content-Type": "application/json",

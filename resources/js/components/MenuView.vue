@@ -29,7 +29,7 @@ const customConfig = {
 const isOpen = ref(window.innerWidth >= 1024);
 const isLibraryOpen = ref(false);
 const theroute = useRoute();
-const APP_URL = import.meta.env.APP_URL;
+const APP_URL = import.meta.env.VITE_APP_URL;
 
 const toggleSidebar = () => {
     isOpen.value = !isOpen.value;

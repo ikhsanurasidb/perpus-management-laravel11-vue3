@@ -38,7 +38,7 @@ const router = useRouter();
 const showAlertDialog = ref(false);
 const alertTitle = ref("");
 const alertMessage = ref("");
-const APP_URL = import.meta.env.APP_URL;
+const APP_URL = import.meta.env.VITE_APP_URL;
 
 const formSchema = toTypedSchema(
     z.object({

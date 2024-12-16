@@ -33,7 +33,7 @@ const therouter = useRouter();
 const store = useUserStore();
 const showAlertDialog = ref(false);
 const alertMessage = ref("");
-const APP_URL = import.meta.env.APP_URL;
+const APP_URL = import.meta.env.VITE_APP_URL;
 
 const customConfig = {
     "Content-Type": "application/json",
