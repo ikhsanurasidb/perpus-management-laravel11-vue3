@@ -59,7 +59,7 @@ const currentRoute = computed(() => route.name);
 function logout() {
     console.log(customConfig);
     axios({
-        url: "http://localhost:8000/api/logout",
+        url: "http://localhost/api/logout",
         method: "get",
         headers: customConfig,
     })

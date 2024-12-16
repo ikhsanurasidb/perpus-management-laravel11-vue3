@@ -7,10 +7,13 @@ export default defineConfig({
         laravel({
             input: ["resources/css/app.css", "resources/js/app.js"],
             refresh: true,
+            manifest: true,
+            buildDirectory: "build",
         }),
         vue({
             template: {
                 transformAssetUrls: {
+                    // Konfigurasi ini membantu Vite memproses URL dalam template Vue
                     base: null,
                     includeAbsolute: false,
                 },
@@ -20,18 +23,27 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": "/resources/js",
+            vue: "vue/dist/vue.esm-bundler.js",
         },
     },
     build: {
+        // Direktori output relatif terhadap root project
+        outDir: "public/build",
+        // Membersihkan direktori output sebelum build baru
+        emptyOutDir: true,
+        // Menghasilkan sourcemaps untuk debugging
+        sourcemap: false,
+        // Konfigurasi untuk manifest
         manifest: true,
+        base: "/",
         rollupOptions: {
+            // Konfigurasi output
             output: {
-                entryFileNames: "assets/[name].[hash].js",
-                chunkFileNames: "assets/[name].[hash].js",
-                assetFileNames: "assets/[name].[hash].[ext]",
+                manualChunks: {
+                    // Memisahkan vendor code
+                    vendor: ["vue"],
+                },
             },
         },
-        outDir: "public/build",
-        emptyOutDir: true,
     },
 });

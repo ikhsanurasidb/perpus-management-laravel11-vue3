@@ -53,7 +53,7 @@ const login = form.handleSubmit((formData) => {
     password.value = formData.password;
 
     axios({
-        url: "http://localhost:8000/api/login",
+        url: "http://localhost/api/login",
         method: "post",
         data: bodyParameters.value,
         headers: customConfig,

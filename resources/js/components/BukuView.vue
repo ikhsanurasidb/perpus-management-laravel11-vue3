@@ -72,7 +72,7 @@ function hapus() {
     if (!bookToDelete.value) return;
 
     axios({
-        url: `http://localhost:8000/api/book/delete/${bookToDelete.value}`,
+        url: `http://localhost/api/book/delete/${bookToDelete.value}`,
         method: "get",
         headers: customConfig,
     })
@@ -102,7 +102,7 @@ function refreshdata() {
     console.log(thedata);
 
     axios({
-        url: "http://localhost:8000/api/book/cari",
+        url: "http://localhost/api/book/cari",
         method: "post",
         headers: customConfig,
         data: thedata,

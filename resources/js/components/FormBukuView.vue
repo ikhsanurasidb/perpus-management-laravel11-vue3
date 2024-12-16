@@ -78,8 +78,8 @@ const save = async (values) => {
     try {
         const url =
             store_or_update === "update"
-                ? `http://localhost:8000/api/book/update/${theroute.params.theisbn}`
-                : `http://localhost:8000/api/book/store`;
+                ? `http://localhost/api/book/update/${theroute.params.theisbn}`
+                : `http://localhost/api/book/store`;
 
         const response = await axios({
             url: url,
@@ -107,7 +107,7 @@ onMounted(async () => {
         isbn_readonly.value = true;
         try {
             const response = await axios({
-                url: `http://localhost:8000/api/book/show/${theroute.params.theisbn}`,
+                url: `http://localhost/api/book/show/${theroute.params.theisbn}`,
                 method: "get",
                 headers: customConfig,
             });
