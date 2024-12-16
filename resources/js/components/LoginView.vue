@@ -39,6 +39,7 @@ const auth = ref({ success: null, message: "" });
 const username = ref("");
 const password = ref("");
 const store = useUserStore();
+const APP_URL = import.meta.env.APP_URL;
 
 const customConfig = {
     "Content-Type": "application/json",
@@ -53,7 +54,7 @@ const login = form.handleSubmit((formData) => {
     password.value = formData.password;
 
     axios({
-        url: "http://localhost/api/login",
+        url: `${APP_URL}/api/login`,
         method: "post",
         data: bodyParameters.value,
         headers: customConfig,

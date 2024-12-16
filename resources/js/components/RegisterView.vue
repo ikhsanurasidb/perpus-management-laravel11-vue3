@@ -38,6 +38,7 @@ const router = useRouter();
 const showAlertDialog = ref(false);
 const alertTitle = ref("");
 const alertMessage = ref("");
+const APP_URL = import.meta.env.APP_URL;
 
 const formSchema = toTypedSchema(
     z.object({
@@ -62,7 +63,7 @@ const form = useForm({
 const onSubmit = async (values) => {
     try {
         const response = await axios.post(
-            "http://localhost:8000/api/register",
+            `${APP_URL}/api/register`,
             values
         );
         console.log(response.data);

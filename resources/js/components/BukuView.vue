@@ -46,6 +46,7 @@ const customConfig = {
 const cari = ref("");
 const showDeleteDialog = ref(false);
 const bookToDelete = ref(null);
+const APP_URL = import.meta.env.APP_URL;
 
 const nomor = computed(() => {
     return currentPage.value === 1 ? 1 : (currentPage.value - 1) * per_page + 1;
@@ -72,7 +73,7 @@ function hapus() {
     if (!bookToDelete.value) return;
 
     axios({
-        url: `http://localhost/api/book/delete/${bookToDelete.value}`,
+        url: `${APP_URL}/api/book/delete/${bookToDelete.value}`,
         method: "get",
         headers: customConfig,
     })
@@ -102,7 +103,7 @@ function refreshdata() {
     console.log(thedata);
 
     axios({
-        url: "http://localhost/api/book/cari",
+        url: `${APP_URL}/api/book/cari`,
         method: "post",
         headers: customConfig,
         data: thedata,

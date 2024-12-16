@@ -29,6 +29,7 @@ const customConfig = {
 const isOpen = ref(window.innerWidth >= 1024);
 const isLibraryOpen = ref(false);
 const theroute = useRoute();
+const APP_URL = import.meta.env.APP_URL;
 
 const toggleSidebar = () => {
     isOpen.value = !isOpen.value;
@@ -59,7 +60,7 @@ const currentRoute = computed(() => route.name);
 function logout() {
     console.log(customConfig);
     axios({
-        url: "http://localhost/api/logout",
+        url: `${APP_URL}/api/logout`,
         method: "get",
         headers: customConfig,
     })

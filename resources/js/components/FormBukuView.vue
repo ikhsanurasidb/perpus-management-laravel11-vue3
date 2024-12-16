@@ -33,6 +33,7 @@ const therouter = useRouter();
 const store = useUserStore();
 const showAlertDialog = ref(false);
 const alertMessage = ref("");
+const APP_URL = import.meta.env.APP_URL;
 
 const customConfig = {
     "Content-Type": "application/json",
@@ -78,8 +79,8 @@ const save = async (values) => {
     try {
         const url =
             store_or_update === "update"
-                ? `http://localhost/api/book/update/${theroute.params.theisbn}`
-                : `http://localhost/api/book/store`;
+                ? `${APP_URL}/api/book/update/${theroute.params.theisbn}`
+                : `${APP_URL}/api/book/store`;
 
         const response = await axios({
             url: url,
@@ -107,7 +108,7 @@ onMounted(async () => {
         isbn_readonly.value = true;
         try {
             const response = await axios({
-                url: `http://localhost/api/book/show/${theroute.params.theisbn}`,
+                url: `${APP_URL}/api/book/show/${theroute.params.theisbn}`,
                 method: "get",
                 headers: customConfig,
             });
